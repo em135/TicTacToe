@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var fields = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    private var fields = [0, 0, 0, 0, 0, 0, 0, 0, 0] //0=empty, 1=x, 2=o
     private let winnerStates = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
     private var cross = #imageLiteral(resourceName: "cross")
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         }
     }
 
-    public func isGameOver() -> Bool {
+    private func isGameOver() -> Bool {
         if checkWinner(player: 1) {
             result = "Cross wins"
             return true
